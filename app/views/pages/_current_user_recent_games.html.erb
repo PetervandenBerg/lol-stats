@@ -1,0 +1,21 @@
+<div class="span4" id="games_signed_user">
+  <% @playerrecentgames["games"].each do |game| %>
+    <ul>
+      <li><%= game["gameMode"] %></li>
+      <li><%= game["gameId"] %></li>
+      <li><%= game["mapId"] %></li>
+      <li><%= game["teamId"] %></li>
+      <li><%= game["championId"] %></li>
+      <li><%= game["spell1"] %></li>
+      <li><%= game["spell2"] %></li>
+      <li><%= Time.at(game["createDate"].to_i / 1000) %></li>
+      <% game["fellowPlayers"].each do |fp| %>
+        <li><%= fp %></li>
+      <% end %>
+      
+      <% game["statistics"].each do |s| %>
+        <li><%= s %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>

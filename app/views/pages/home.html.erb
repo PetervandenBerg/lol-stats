@@ -1,0 +1,18 @@
+<% if user_signed_in? %>
+  <div class="row">
+    <%= render 'pages/current_user_stats' %>
+
+    <div class="span3" id="add_friends">      
+      <h4>Compare your stats with your friends.</h4>
+      <form>
+        Summonername first friend: <input type="text" name="firstfriend"><br>
+        Summonername second friend: <input type="text" name="secondfriend">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+
+<% else %>
+  <h1>Hello, Welcome to League-stats, Sign up <%= link_to 'here', new_user_registration_path %></h1>
+
+<% end %>

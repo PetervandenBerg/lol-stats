@@ -1,0 +1,26 @@
+<div class="span7" id="signed_user">
+  <h3 id="playerstats_title"><%= @playerstats["name"]  %>'s stats </h3>
+  <div class="span3"> 
+    <ul>
+      <li><%= @playerstats["name"] %></li>
+      <li><%= image_tag("profileicon/#{@playerstats["profileIconId"]}.png") %></li>
+      <li><%= @playerstats["summonerLevel"] %></li>
+      <li><%= @playerrankedstats["#{current_user.summoner_id}"]["name"] %></li>
+      <li><%= @playerrankedstats["#{current_user.summoner_id}"]["tier"] %></li>
+      <li><%= @playerrankedstats["#{current_user.summoner_id}"]["queue"] %></li>
+    </ul>
+  </div>
+  <div class="span4"> 
+    <% count = -1 %>
+    <form>
+      <select name="type">
+        <% @playersummery["playerStatSummaries"].each do |ps| %>
+           <option value=<%= count += 1 %>><%= ps["playerStatSummaryType"] %></option>
+        <% end %>
+      </select>
+      <input type="submit" value="Show Stats">
+    </form>
+    <li><%= @playersummery["playerStatSummaries"][@chosen_type] %></li>
+  </div>
+</div>
+
