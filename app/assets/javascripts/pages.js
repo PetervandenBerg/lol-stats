@@ -13,11 +13,9 @@ $(function () {
         $('.flexslider').flexslider();
     }
 
-    servicesCircle.initialize();
 
     staticHeader.initialize();
 
-    portfolioItem.initialize();
 });
 
 var staticHeader = {
